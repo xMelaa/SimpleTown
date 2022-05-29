@@ -69,6 +69,10 @@ public class Coins : MonoBehaviour
             if (col.gameObject.tag == "Coins"){                
                 coin++; //powiększ coin o 1 
 
+                if(coin==coinLVL){ //jeśli osiągniemy ilość punktów do przejścia na kolejny poziom to odblokuj teleport
+                    teleport = true;                    
+                }
+
                 textCoins.text = coin.ToString() + " / " + coinLVL;//zmien wczesniej wybrany TextMeshPro na Tekst + ilość punktów zamienionych na string        
 
                 Vector3 colPosition = col.transform.position; //tworzymy Vector3 z miejscem kolizji                  
