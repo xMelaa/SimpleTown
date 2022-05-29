@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Coins
   - Ground
+  - Destroy
   layers:
   - Default
   - TransparentFX
