@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5f; // zmienna szybkosci
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
+
+    public float energia = 1;
 
     private void Start(){       
        controller = GetComponent<CharacterController>();
@@ -57,5 +60,9 @@ public class PlayerMovement : MonoBehaviour
         if(collision.gameObject.tag == "Ground") {
             isGround = true;
         }
+    }
+
+    public void energy(int wartosc){
+        energia = energia + wartosc; //dodawanie wartosci do energii
     }
 }

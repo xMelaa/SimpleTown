@@ -6,13 +6,13 @@ public class Patrol : MonoBehaviour{
     public float speed = 2f; //predkosc chodzenia do ustawienia w inspektorze
     public Transform[] spots; //tablica waypointów w których enemy chodzi od jednego do drugiego
     private int spotIndex; //index waypointu od ktorego enemy idzie   
-    //public PlayerMovement player; //bedziemy korzystac z innego pliku cs
+    public PlayerMovement player; //bedziemy korzystac z innego pliku cs
     private float dist;
     
     void Start(){        
         spotIndex=0;
         transform.LookAt(spots[spotIndex].position); //ustaw pozycje enemy na pozycji 1. waypointu
-        //player = FindObjectOfType<PlayerMovement> ();
+        player = FindObjectOfType<PlayerMovement> ();
     } 
        
     void Update(){        
@@ -36,9 +36,9 @@ public class Patrol : MonoBehaviour{
        transform.LookAt(spots[spotIndex].position);   //zwroc sie do punktow
     }  
 
-    /*void OnTriggerEnter(Collider col){ // jesli trigger jest aktywowany
+    void OnTriggerEnter(Collider col){ // jesli trigger jest aktywowany
         if(col.name == "Player"){ // jesli colizja jest z Playerem
             player.energy (-1); // wywolaj funkcje dodajaca energie z wartoscia -1 (odejmuje)
         }
-    }*/
+    }
 }
