@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Coins : MonoBehaviour
 {
@@ -14,29 +16,34 @@ public class Coins : MonoBehaviour
     public AudioClip coinSound;
         //Głośność muzyki
     public float volume;
+    public TextMeshProUGUI textCoins;
     
    
  
     void Start(){
         player = FindObjectOfType<PlayerMovement> (); //automatycznie przypisz obiekt        
-        /*lvlNumber = SceneManager.GetActiveScene().buildIndex;
+        lvlNumber = SceneManager.GetActiveScene().buildIndex;
 
         switch (lvlNumber)
                 {
-                    case 1:
-                        coinLVL = 10;
+                   case 0:
+                        coinLVL = 5;
                         break;
-                    case 2:
+                    /*  case 1:
+                        coinLVL = 5;
+                        break;
+                  case 2:
                         coinLVL = 12;
                         break;
                     case 3:
                         coinLVL = 56;
-                        break;
+                        break; */
                     default:
                         break;
                 }
+                textCoins.text = coin.ToString() + " / " + coinLVL;
 
-                */ //ilosc pkt do zdonycia na konkretnych lvl TO DO
+                 //ilosc pkt do zdonycia na konkretnych lvl TO DO
 
     }   
 
@@ -45,22 +52,24 @@ public class Coins : MonoBehaviour
            Destroy(col.gameObject);           
         }
 
-        /*switch (lvlNumber){
+        switch (lvlNumber){
                     case 1:
-                        coinLVL = 10;
+                        coinLVL = 5;
                         break;
-                    case 2:
+                   /* case 2:
                         coinLVL = 12;
                         break;
                     case 3:
                         coinLVL = 56;
-                        break;                    
+                        break;  */                  
                     default:
                         break;
-                } */
+                } 
 
             if (col.gameObject.tag == "Coins"){                
                 coin++; //powiększ coin o 1 
+
+                textCoins.text = coin.ToString() + " / " + coinLVL;//zmien wczesniej wybrany TextMeshPro na Tekst + ilość punktów zamienionych na string        
 
                 Vector3 colPosition = col.transform.position; //tworzymy Vector3 z miejscem kolizji                  
                 
