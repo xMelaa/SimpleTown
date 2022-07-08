@@ -8,6 +8,6 @@ public class CoinRotation : MonoBehaviour
     float speed = 70.0f;
 
     void Update(){
-        coin.transform.Rotate(Vector3.up*speed*Time.deltaTime);
+        coin.transform.Rotate(Vector3.forward*speed*Time.deltaTime);
     }
 }

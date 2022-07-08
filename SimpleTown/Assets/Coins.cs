@@ -26,18 +26,15 @@ public class Coins : MonoBehaviour
 
         switch (lvlNumber)
                 {
-                   case 0:
-                        coinLVL = 5;
-                        break;
-                    /*  case 1:
-                        coinLVL = 5;
-                        break;
-                  case 2:
-                        coinLVL = 12;
+                    case 1:
+                        coinLVL = 8;
+                        break;                   
+                    case 2:
+                        coinLVL = 6;
                         break;
                     case 3:
-                        coinLVL = 56;
-                        break; */
+                        coinLVL = 10;
+                        break; 
                     default:
                         break;
                 }
@@ -54,14 +51,14 @@ public class Coins : MonoBehaviour
 
         switch (lvlNumber){
                     case 1:
-                        coinLVL = 5;
-                        break;
-                   /* case 2:
-                        coinLVL = 12;
+                        coinLVL = 8;
+                        break;                   
+                    case 2:
+                        coinLVL = 6;
                         break;
                     case 3:
-                        coinLVL = 56;
-                        break;  */                  
+                        coinLVL = 10;
+                        break; 
                     default:
                         break;
                 } 
